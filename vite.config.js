@@ -17,5 +17,14 @@ export default defineConfig({
         secure: false,
       }
     }
+  },
+  build: {
+    proxy: {
+      '/api': {
+        target: 'https://finance-backend-pyf8.onrender.com',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   }
 })
