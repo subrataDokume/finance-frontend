@@ -9,22 +9,4 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'https://finance-backend-pyf8.onrender.com',
-        changeOrigin: true,
-        secure: false,
-      }
-    }
-  },
-  build: {
-    proxy: {
-      '/api': {
-        target: 'https://finance-backend-pyf8.onrender.com',
-        changeOrigin: true,
-        secure: false,
-      }
-    }
-  }
 })

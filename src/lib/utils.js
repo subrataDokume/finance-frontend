@@ -2,6 +2,7 @@ import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge"
 
 let token = null;
+let api = 'https://finance-backend-pyf8.onrender.com';
 
 export function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -28,7 +29,7 @@ export function generateRandomColor() {
 };
 
 export async function login(fdata) {
-  const response = await fetch(`/api/v1/user/login`, {
+  const response = await fetch(`${api}/api/v1/user/login`, {
     method: "POST",
     body: JSON.stringify(fdata),
     headers: {
@@ -51,7 +52,7 @@ export async function login(fdata) {
   }
 }
 export async function signup(fdata) {
-  const response = await fetch(`/api/v1/user/signup`, {
+  const response = await fetch(`${api}/api/v1/user/signup`, {
     method: "POST",
     body: JSON.stringify(fdata),
     headers: {
@@ -75,7 +76,7 @@ export async function signup(fdata) {
 };
 
 export async function logout() {
-  const response = await fetch(`/api/v1/user/logout`, {
+  const response = await fetch(`${api}/api/v1/user/logout`, {
     method: "POST",
     headers: {
       'content-Type': 'application/json',
@@ -99,7 +100,7 @@ export async function logout() {
 }
 
 export async function getTransaction() {
-  const response = await fetch(`/api/v1/transation`, {
+  const response = await fetch(`${api}/api/v1/transation`, {
     method: "GET",
     headers: {
       'content-Type': 'application/json',
@@ -122,7 +123,7 @@ export async function getTransaction() {
 }
 
 export async function getcategory() {
-  const response = await fetch(`/api/v1/budget`, {
+  const response = await fetch(`${api}/api/v1/budget`, {
     method: "GET",
     headers: {
       'content-Type': 'application/json',
@@ -145,7 +146,7 @@ export async function getcategory() {
 };
 
 export async function getcategoryReport() {
-  const response = await fetch(`/api/v1/budget/budget-alerts`, {
+  const response = await fetch(`${api}/api/v1/budget/budget-alerts`, {
     method: "GET",
     headers: {
       'content-Type': 'application/json',
@@ -168,7 +169,7 @@ export async function getcategoryReport() {
 };
 
 export async function createTransaction(fdata) {
-  const response = await fetch(`/api/v1/transation`, {
+  const response = await fetch(`${api}/api/v1/transation`, {
     method: "POST",
     body: JSON.stringify(fdata),
     headers: {
@@ -192,7 +193,7 @@ export async function createTransaction(fdata) {
 };
 
 export async function editTransaction({ values, id }) {
-  const response = await fetch(`/api/v1/transation/${id}`, {
+  const response = await fetch(`${api}/api/v1/transation/${id}`, {
     method: "PATCH",
     body: JSON.stringify(values),
     headers: {
@@ -215,7 +216,7 @@ export async function editTransaction({ values, id }) {
   }
 };
 export async function editCategory({ values, id }) {
-  const response = await fetch(`/api/v1/budget/${id}`, {
+  const response = await fetch(`${api}/api/v1/budget/${id}`, {
     method: "PATCH",
     body: JSON.stringify(values),
     headers: {
@@ -239,7 +240,7 @@ export async function editCategory({ values, id }) {
 };
 
 export async function deleteTransactionData({ id }) {
-  const response = await fetch(`/api/v1/transation/${id}`, {
+  const response = await fetch(`${api}/api/v1/transation/${id}`, {
     method: "DELETE",
     headers: {
       'content-Type': 'application/json',
@@ -262,7 +263,7 @@ export async function deleteTransactionData({ id }) {
 };
 
 export async function deleteBudgetData({ id }) {
-  const response = await fetch(`/api/v1/budget/${id}`, {
+  const response = await fetch(`${api}/api/v1/budget/${id}`, {
     method: "DELETE",
     headers: {
       'content-Type': 'application/json',
@@ -285,7 +286,7 @@ export async function deleteBudgetData({ id }) {
 };
 
 export async function getEditTransactionData(id) {
-  const response = await fetch(`/api/v1/transation/${id}`, {
+  const response = await fetch(`${api}/api/v1/transation/${id}`, {
     method: "GET",
     headers: {
       'content-Type': 'application/json',
@@ -308,7 +309,7 @@ export async function getEditTransactionData(id) {
 };
 
 export async function getEditBudgetData(id) {
-  const response = await fetch(`/api/v1/budget/${id}`, {
+  const response = await fetch(`${api}/api/v1/budget/${id}`, {
     method: "GET",
     headers: {
       'content-Type': 'application/json',
@@ -331,7 +332,7 @@ export async function getEditBudgetData(id) {
 };
 
 export async function createnewBudget(fdata) {
-  const response = await fetch(`/api/v1/budget`, {
+  const response = await fetch(`${api}/api/v1/budget`, {
     method: "POST",
     body: JSON.stringify(fdata),
     headers: {
